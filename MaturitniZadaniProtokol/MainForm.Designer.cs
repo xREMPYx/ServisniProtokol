@@ -60,7 +60,7 @@
             this.Btn_Measure_Add = new System.Windows.Forms.Button();
             this.Btn_Measure_Edit = new System.Windows.Forms.Button();
             this.Btn_Measure_Remove = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DataGridView = new System.Windows.Forms.DataGridView();
             this.Btn_Save = new System.Windows.Forms.Button();
             this.Btn_Import = new System.Windows.Forms.Button();
             this.Btn_Preview = new System.Windows.Forms.Button();
@@ -69,7 +69,7 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -351,7 +351,7 @@
             this.panel2.Controls.Add(this.Btn_Measure_Add);
             this.panel2.Controls.Add(this.Btn_Measure_Edit);
             this.panel2.Controls.Add(this.Btn_Measure_Remove);
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.DataGridView);
             this.panel2.Location = new System.Drawing.Point(12, 346);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(666, 276);
@@ -387,14 +387,15 @@
             this.Btn_Measure_Remove.UseVisualStyleBackColor = true;
             this.Btn_Measure_Remove.Click += new System.EventHandler(this.Btn_Measure_Remove_Click);
             // 
-            // dataGridView1
+            // DataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(616, 214);
-            this.dataGridView1.TabIndex = 0;
+            this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView.Location = new System.Drawing.Point(21, 25);
+            this.DataGridView.Name = "DataGridView";
+            this.DataGridView.ReadOnly = true;
+            this.DataGridView.RowTemplate.Height = 25;
+            this.DataGridView.Size = new System.Drawing.Size(616, 214);
+            this.DataGridView.TabIndex = 0;
             // 
             // Btn_Save
             // 
@@ -449,6 +450,10 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(706, 713);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(706, 713);
             this.Name = "MainForm";
             this.Text = "Servisní protokol";
             this.panel1.ResumeLayout(false);
@@ -458,7 +463,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,7 +488,7 @@
         private Button Btn_Measure_Add;
         private Button Btn_Measure_Edit;
         private Button Btn_Measure_Remove;
-        private DataGridView dataGridView1;
+        private DataGridView DataGridView;
         private Button Btn_Save;
         private Button Btn_Import;
         private Button Btn_Preview;

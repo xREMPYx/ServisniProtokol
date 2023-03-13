@@ -61,7 +61,7 @@ namespace MaturitniZadaniProtokol
         private void TxtBox_Value_Validating(object sender, CancelEventArgs e)
         {
             this._validationService.ValidateEmpty(sender, e);
-            this._validationService.ValidateTIN(sender, e);
+            this._validationService.ValidateMeasureValue(sender, e);
         }
     }
 }

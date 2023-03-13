@@ -28,6 +28,9 @@ namespace MaturitniZadaniProtokol.Services
             if (result == DialogResult.OK)
             {
                 _model = form.GetModel();
+
+                _mainForm.Lbl_Protocol_Number.Text = _model.ProtocolNumber;
+                _mainForm.Lbl_Measure_Date.Text = _model.MeasurementDate.ToString("d.M.yyyy");
             }
         }
     }
