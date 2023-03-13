@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MaturitniZadaniProtokol.Services
 {
-    public class BasicInformationService
+    public class BasicInformationService : IModelService
     {
         private readonly MainForm _mainForm;
 
@@ -33,17 +33,22 @@ namespace MaturitniZadaniProtokol.Services
             }
         }
 
-        public void Update(BasicInformationModel model)
+        public void Update(ProtocolModel model)
         {
-            this._model = model;
+            this._model = model.BasicInformation;
 
             UpdateValues();
+        }
+
+        public void Save(ProtocolModel model)
+        {
+            model.BasicInformation = _model;
         }
 
         private void UpdateValues()
         {            
             _mainForm.Lbl_Protocol_Number.Text = _model.ProtocolNumber;
             _mainForm.Lbl_Measure_Date.Text = _model.MeasurementDate.ToString("d.M.yyyy");
-        }
+        }       
     }
 }

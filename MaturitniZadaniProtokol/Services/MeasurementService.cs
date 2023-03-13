@@ -8,17 +8,10 @@ using System.Threading.Tasks;
 
 namespace MaturitniZadaniProtokol.Services
 {
-    public class MeasurementService
+    public class MeasurementService : IModelService
     {
-        private readonly MainForm _mainForm;
-
         private IList<MeasurementModel> _model = new BindingList<MeasurementModel>();
         public IList<MeasurementModel> GetModel() => _model;
-
-        public MeasurementService(MainForm mainForm)
-        {
-            _mainForm = mainForm;
-        }
 
         public void Add()
         {
@@ -46,12 +39,18 @@ namespace MaturitniZadaniProtokol.Services
 
         public void Remove(int index)
         {
-            _model.RemoveAt(index);
+            _model.RemoveAt(index);            
         }
 
-        public void Update(IList<MeasurementModel> model)
+        public void Update(ProtocolModel model)
         {
-            this._model = model;
+            this._model.Clear();
+            model.Measurements.ToList().ForEach(x => _model.Add(x));
+        }
+
+        public void Save(ProtocolModel model)
+        {
+            model.Measurements = _model;
         }
     }
 }

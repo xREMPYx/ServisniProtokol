@@ -10,6 +10,13 @@ namespace MaturitniZadaniProtokol.Services
 {
     public class FileService
     {
+        private readonly IModelService[] _services;
+
+        public FileService(params IModelService[] services)
+        {
+            this._services = services;
+        }
+
         private string GetInformationText(BasicInformationModel model)
         {
             string result = $"[BasicInfo];{model.ProtocolNumber};{model.MeasurementDate}";
@@ -89,8 +96,8 @@ namespace MaturitniZadaniProtokol.Services
             {
                 reader.ReadLine();
                 string? line = reader.ReadLine();
-                
-                while (line != null)
+                                
+                while (!string.IsNullOrEmpty(line))
                 {
                     string[] parts = line.Split(';');
 
@@ -129,10 +136,46 @@ namespace MaturitniZadaniProtokol.Services
                 result.BasicInformation = GetInformationModel(reader.ReadLine());
                 result.Customer = GetCustomerModel(reader.ReadLine());
                 result.Device = GetDeviceModel(reader.ReadLine());
-                result.Measurements = GetMeasurementModels(reader.ReadLine());
+                result.Measurements = GetMeasurementModels(reader.ReadToEnd());
             };
-
+            
             return result;
+        }
+
+        public void Import()
+        {
+            using (OpenFileDialog fileDialog = new OpenFileDialog())
+            {
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {                    
+                    ProtocolModel model = GetProtocolModel(fileDialog.FileName);
+
+                    foreach (IModelService service in _services)
+                    {
+                        service.Update(model);
+                    }
+                }
+            };                        
+        }
+
+        public void Save()
+        {
+            using (SaveFileDialog fileDialog = new SaveFileDialog())
+            {
+                ProtocolModel model = new ProtocolModel();
+
+                fileDialog.Filter = "Text File | *.txt";
+
+                foreach (IModelService service in _services)
+                {
+                    service.Save(model);
+                }                
+
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Save(model, fileDialog.FileName);
+                }
+            };            
         }
     }
 }

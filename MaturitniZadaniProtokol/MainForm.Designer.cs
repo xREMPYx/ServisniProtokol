@@ -405,6 +405,7 @@
             this.Btn_Save.TabIndex = 14;
             this.Btn_Save.Text = "Uložit";
             this.Btn_Save.UseVisualStyleBackColor = true;
+            this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
             // 
             // Btn_Import
             // 
@@ -414,6 +415,7 @@
             this.Btn_Import.TabIndex = 15;
             this.Btn_Import.Text = "Načíst";
             this.Btn_Import.UseVisualStyleBackColor = true;
+            this.Btn_Import.Click += new System.EventHandler(this.Btn_Import_Click);
             // 
             // Btn_Preview
             // 

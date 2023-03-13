@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MaturitniZadaniProtokol.Services
 {
-    public class DeviceService
+    public class DeviceService : IModelService
     {
         private readonly MainForm _mainForm;
 
@@ -33,10 +33,15 @@ namespace MaturitniZadaniProtokol.Services
             }
         }
 
-        public void Update(DeviceModel model)
+        public void Update(ProtocolModel model)
         {
-            this._model = model;
+            this._model = model.Device;
             UpdateDisplayValues();
+        }
+
+        public void Save(ProtocolModel model)
+        {
+            model.Device = _model;
         }
 
         private void UpdateDisplayValues()

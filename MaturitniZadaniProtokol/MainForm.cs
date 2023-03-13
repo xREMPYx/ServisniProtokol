@@ -13,14 +13,17 @@ namespace MaturitniZadaniProtokol
 
         private readonly MeasurementService _measurementService;
 
+        private readonly FileService _fileService;
+
         
         public MainForm()
         {
             InitializeComponent();
+            _measurementService = new MeasurementService();
             _customerService = new CustomerService(this);
             _deviceService = new DeviceService(this);
             _basicInfoService = new BasicInformationService(this);
-            _measurementService = new MeasurementService(this);
+            _fileService = new FileService(_customerService, _deviceService, _basicInfoService, _measurementService);
             this.DataGridView.DataSource = _measurementService.GetModel();
         }
 
@@ -62,6 +65,17 @@ namespace MaturitniZadaniProtokol
                 return;
 
             _measurementService.Remove((int)index);
+        }
+
+        private void Btn_Save_Click(object sender, EventArgs e)
+        {
+            _fileService.Save();
+        }
+
+        private void Btn_Import_Click(object sender, EventArgs e)
+        {
+            _fileService.Import();
+            this.DataGridView.Refresh();
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MaturitniZadaniProtokol.Services
 {
-    public class CustomerService
+    public class CustomerService : IModelService
     {
         private readonly MainForm _mainForm;
 
@@ -33,10 +33,15 @@ namespace MaturitniZadaniProtokol.Services
             }
         }
 
-        public void Update(CustomerModel model)
+        public void Update(ProtocolModel model)
         {
-            this._model = model;
+            this._model = model.Customer;
             UpdateDisplayValues();
+        }
+
+        public void Save(ProtocolModel model)
+        {
+            model.Customer = _model;
         }
 
         private void UpdateDisplayValues()
@@ -45,6 +50,6 @@ namespace MaturitniZadaniProtokol.Services
             _mainForm.Lbl_Customer_Name.Text = _model.Name;
             _mainForm.Lbl_Customer_PostalCode.Text = _model.PostalCode;
             _mainForm.Lbl_Customer_TIN.Text = _model.TIN;
-        }
+        }        
     }
 }
