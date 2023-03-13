@@ -29,10 +29,21 @@ namespace MaturitniZadaniProtokol.Services
             {
                 _model = form.GetModel();
 
-                _mainForm.Lbl_Device_Manufacturer.Text = _model.Manufacturer;
-                _mainForm.Lbl_Device_Model.Text = _model.Model;
-                _mainForm.Lbl_Device_SerialCode.Text = _model.SerialCode;
+                UpdateDisplayValues();
             }
+        }
+
+        public void Update(DeviceModel model)
+        {
+            this._model = model;
+            UpdateDisplayValues();
+        }
+
+        private void UpdateDisplayValues()
+        {
+            _mainForm.Lbl_Device_Manufacturer.Text = _model.Manufacturer;
+            _mainForm.Lbl_Device_Model.Text = _model.Model;
+            _mainForm.Lbl_Device_SerialCode.Text = _model.SerialCode;
         }
     }
 }

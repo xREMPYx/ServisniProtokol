@@ -12,11 +12,6 @@ namespace MaturitniZadaniProtokol.Models
         public BasicInformationModel BasicInformation { get; set; }
         public CustomerModel Customer { get; set; }
         public DeviceModel Device { get; set; }
-        public ICollection<MeasurementModel> Measurements { get; set; }
-
-        public ProtocolModel()
-        {
-            this.Measurements = new BindingList<MeasurementModel>();
-        }
+        public IList<MeasurementModel> Measurements { get; set; }
     }
 }

@@ -48,5 +48,10 @@ namespace MaturitniZadaniProtokol.Services
         {
             _model.RemoveAt(index);
         }
+
+        public void Update(IList<MeasurementModel> model)
+        {
+            this._model = model;
+        }
     }
 }

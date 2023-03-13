@@ -29,11 +29,22 @@ namespace MaturitniZadaniProtokol.Services
             {
                 _model = form.GetModel();
 
-                _mainForm.Lbl_Customer_Address.Text = _model.Address;
-                _mainForm.Lbl_Customer_Name.Text = _model.Name;
-                _mainForm.Lbl_Customer_PostalCode.Text = _model.PostalCode;
-                _mainForm.Lbl_Customer_TIN.Text = _model.TIN;
+                UpdateDisplayValues();
             }
+        }
+
+        public void Update(CustomerModel model)
+        {
+            this._model = model;
+            UpdateDisplayValues();
+        }
+
+        private void UpdateDisplayValues()
+        {
+            _mainForm.Lbl_Customer_Address.Text = _model.Address;
+            _mainForm.Lbl_Customer_Name.Text = _model.Name;
+            _mainForm.Lbl_Customer_PostalCode.Text = _model.PostalCode;
+            _mainForm.Lbl_Customer_TIN.Text = _model.TIN;
         }
     }
 }

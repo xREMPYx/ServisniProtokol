@@ -29,9 +29,21 @@ namespace MaturitniZadaniProtokol.Services
             {
                 _model = form.GetModel();
 
-                _mainForm.Lbl_Protocol_Number.Text = _model.ProtocolNumber;
-                _mainForm.Lbl_Measure_Date.Text = _model.MeasurementDate.ToString("d.M.yyyy");
+                UpdateValues();
             }
+        }
+
+        public void Update(BasicInformationModel model)
+        {
+            this._model = model;
+
+            UpdateValues();
+        }
+
+        private void UpdateValues()
+        {            
+            _mainForm.Lbl_Protocol_Number.Text = _model.ProtocolNumber;
+            _mainForm.Lbl_Measure_Date.Text = _model.MeasurementDate.ToString("d.M.yyyy");
         }
     }
 }
