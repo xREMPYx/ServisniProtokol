@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MaturitniZadaniProtokol.Models
 {
-    public class DeviceModel
+    public class BasicInformationModel
     {
-        public string Manufacturer { get; set; }
-        public string Model { get; set; }
-        public string SerialCode { get; set; }
+        public string ProtocolNumber { get; set; }
+        public DateTime MeasurementDate { get; set; } = DateTime.Now;
     }
 }

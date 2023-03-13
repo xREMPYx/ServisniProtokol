@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Btn_Cancel = new System.Windows.Forms.Button();
             this.Btn_Confirm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DateTimePicker_Measure_Date = new System.Windows.Forms.DateTimePicker();
             this.TxtBox_ProtocolNumber = new System.Windows.Forms.TextBox();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Cancel
@@ -87,11 +90,17 @@
             this.TxtBox_ProtocolNumber.Name = "TxtBox_ProtocolNumber";
             this.TxtBox_ProtocolNumber.Size = new System.Drawing.Size(200, 23);
             this.TxtBox_ProtocolNumber.TabIndex = 5;
+            this.TxtBox_ProtocolNumber.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_ProtocolNumber_Validating);
+            // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
             // 
             // BasicInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(364, 124);
             this.Controls.Add(this.TxtBox_ProtocolNumber);
             this.Controls.Add(this.DateTimePicker_Measure_Date);
@@ -101,6 +110,7 @@
             this.Controls.Add(this.Btn_Cancel);
             this.Name = "BasicInformationForm";
             this.Text = "Základní informace";
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,5 +124,6 @@
         private Label label2;
         private DateTimePicker DateTimePicker_Measure_Date;
         private TextBox TxtBox_ProtocolNumber;
+        private ErrorProvider ErrorProvider;
     }
 }

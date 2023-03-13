@@ -29,16 +29,31 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.Lbl_Measure_Date = new System.Windows.Forms.Label();
+            this.Lbl_Protocol_Number = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Btn_Info_Edit = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Lbl_Device_SerialCode = new System.Windows.Forms.Label();
+            this.Lbl_Device_Model = new System.Windows.Forms.Label();
+            this.Lbl_Device_Manufacturer = new System.Windows.Forms.Label();
+            this.xxxx = new System.Windows.Forms.Label();
+            this.xxx = new System.Windows.Forms.Label();
+            this.xx = new System.Windows.Forms.Label();
             this.Btn_Device_Edit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Lbl_Customer_TIN = new System.Windows.Forms.Label();
+            this.Lbl_Customer_PostalCode = new System.Windows.Forms.Label();
+            this.Lbl_Customer_Address = new System.Windows.Forms.Label();
+            this.Lbl_Customer_Name = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.Btn_Customer_Edit = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,21 +65,6 @@
             this.Btn_Import = new System.Windows.Forms.Button();
             this.Btn_Preview = new System.Windows.Forms.Button();
             this.Btn_Export = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.Lbl_Customer_Name = new System.Windows.Forms.Label();
-            this.Lbl_Customer_Address = new System.Windows.Forms.Label();
-            this.Lbl_Customer_PostalCode = new System.Windows.Forms.Label();
-            this.Lbl_Customer_TIN = new System.Windows.Forms.Label();
-            this.Lbl_Device_Manufacturer = new System.Windows.Forms.Label();
-            this.Lbl_Device_Model = new System.Windows.Forms.Label();
-            this.Lbl_Device_SerialCode = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.Lbl_Protocol_Number = new System.Windows.Forms.Label();
-            this.Lbl_Measure_Date = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -85,14 +85,23 @@
             this.panel1.Size = new System.Drawing.Size(666, 82);
             this.panel1.TabIndex = 0;
             // 
-            // label7
+            // Lbl_Measure_Date
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 15);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Název:";
+            this.Lbl_Measure_Date.AutoSize = true;
+            this.Lbl_Measure_Date.Location = new System.Drawing.Point(118, 48);
+            this.Lbl_Measure_Date.Name = "Lbl_Measure_Date";
+            this.Lbl_Measure_Date.Size = new System.Drawing.Size(12, 15);
+            this.Lbl_Measure_Date.TabIndex = 4;
+            this.Lbl_Measure_Date.Text = "?";
+            // 
+            // Lbl_Protocol_Number
+            // 
+            this.Lbl_Protocol_Number.AutoSize = true;
+            this.Lbl_Protocol_Number.Location = new System.Drawing.Point(118, 18);
+            this.Lbl_Protocol_Number.Name = "Lbl_Protocol_Number";
+            this.Lbl_Protocol_Number.Size = new System.Drawing.Size(12, 15);
+            this.Lbl_Protocol_Number.TabIndex = 3;
+            this.Lbl_Protocol_Number.Text = "?";
             // 
             // label6
             // 
@@ -120,6 +129,16 @@
             this.Btn_Info_Edit.TabIndex = 0;
             this.Btn_Info_Edit.Text = "Upravit";
             this.Btn_Info_Edit.UseVisualStyleBackColor = true;
+            this.Btn_Info_Edit.Click += new System.EventHandler(this.Btn_Info_Edit_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 15);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Název:";
             // 
             // label1
             // 
@@ -142,17 +161,71 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.label19);
-            this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.Lbl_Device_SerialCode);
             this.panel3.Controls.Add(this.Lbl_Device_Model);
             this.panel3.Controls.Add(this.Lbl_Device_Manufacturer);
+            this.panel3.Controls.Add(this.xxxx);
+            this.panel3.Controls.Add(this.xxx);
+            this.panel3.Controls.Add(this.xx);
             this.panel3.Controls.Add(this.Btn_Device_Edit);
             this.panel3.Location = new System.Drawing.Point(360, 138);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(318, 183);
             this.panel3.TabIndex = 8;
+            // 
+            // Lbl_Device_SerialCode
+            // 
+            this.Lbl_Device_SerialCode.AutoSize = true;
+            this.Lbl_Device_SerialCode.Location = new System.Drawing.Point(123, 82);
+            this.Lbl_Device_SerialCode.Name = "Lbl_Device_SerialCode";
+            this.Lbl_Device_SerialCode.Size = new System.Drawing.Size(12, 15);
+            this.Lbl_Device_SerialCode.TabIndex = 15;
+            this.Lbl_Device_SerialCode.Text = "?";
+            // 
+            // Lbl_Device_Model
+            // 
+            this.Lbl_Device_Model.AutoSize = true;
+            this.Lbl_Device_Model.Location = new System.Drawing.Point(123, 53);
+            this.Lbl_Device_Model.Name = "Lbl_Device_Model";
+            this.Lbl_Device_Model.Size = new System.Drawing.Size(12, 15);
+            this.Lbl_Device_Model.TabIndex = 14;
+            this.Lbl_Device_Model.Text = "?";
+            // 
+            // Lbl_Device_Manufacturer
+            // 
+            this.Lbl_Device_Manufacturer.AutoSize = true;
+            this.Lbl_Device_Manufacturer.Location = new System.Drawing.Point(123, 24);
+            this.Lbl_Device_Manufacturer.Name = "Lbl_Device_Manufacturer";
+            this.Lbl_Device_Manufacturer.Size = new System.Drawing.Size(12, 15);
+            this.Lbl_Device_Manufacturer.TabIndex = 13;
+            this.Lbl_Device_Manufacturer.Text = "?";
+            // 
+            // xxxx
+            // 
+            this.xxxx.AutoSize = true;
+            this.xxxx.Location = new System.Drawing.Point(26, 82);
+            this.xxxx.Name = "xxxx";
+            this.xxxx.Size = new System.Drawing.Size(75, 15);
+            this.xxxx.TabIndex = 12;
+            this.xxxx.Text = "Sériové číslo:";
+            // 
+            // xxx
+            // 
+            this.xxx.AutoSize = true;
+            this.xxx.Location = new System.Drawing.Point(26, 53);
+            this.xxx.Name = "xxx";
+            this.xxx.Size = new System.Drawing.Size(44, 15);
+            this.xxx.TabIndex = 11;
+            this.xxx.Text = "Model:";
+            // 
+            // xx
+            // 
+            this.xx.AutoSize = true;
+            this.xx.Location = new System.Drawing.Point(26, 24);
+            this.xx.Name = "xx";
+            this.xx.Size = new System.Drawing.Size(53, 15);
+            this.xx.TabIndex = 10;
+            this.xx.Text = "Výrobce:";
             // 
             // Btn_Device_Edit
             // 
@@ -162,6 +235,7 @@
             this.Btn_Device_Edit.TabIndex = 0;
             this.Btn_Device_Edit.Text = "Upravit";
             this.Btn_Device_Edit.UseVisualStyleBackColor = true;
+            this.Btn_Device_Edit.Click += new System.EventHandler(this.Btn_Device_Edit_Click);
             // 
             // label4
             // 
@@ -189,6 +263,69 @@
             this.panel4.Size = new System.Drawing.Size(318, 183);
             this.panel4.TabIndex = 10;
             // 
+            // Lbl_Customer_TIN
+            // 
+            this.Lbl_Customer_TIN.AutoSize = true;
+            this.Lbl_Customer_TIN.Location = new System.Drawing.Point(118, 111);
+            this.Lbl_Customer_TIN.Name = "Lbl_Customer_TIN";
+            this.Lbl_Customer_TIN.Size = new System.Drawing.Size(12, 15);
+            this.Lbl_Customer_TIN.TabIndex = 9;
+            this.Lbl_Customer_TIN.Text = "?";
+            // 
+            // Lbl_Customer_PostalCode
+            // 
+            this.Lbl_Customer_PostalCode.AutoSize = true;
+            this.Lbl_Customer_PostalCode.Location = new System.Drawing.Point(118, 82);
+            this.Lbl_Customer_PostalCode.Name = "Lbl_Customer_PostalCode";
+            this.Lbl_Customer_PostalCode.Size = new System.Drawing.Size(12, 15);
+            this.Lbl_Customer_PostalCode.TabIndex = 8;
+            this.Lbl_Customer_PostalCode.Text = "?";
+            // 
+            // Lbl_Customer_Address
+            // 
+            this.Lbl_Customer_Address.AutoSize = true;
+            this.Lbl_Customer_Address.Location = new System.Drawing.Point(118, 53);
+            this.Lbl_Customer_Address.Name = "Lbl_Customer_Address";
+            this.Lbl_Customer_Address.Size = new System.Drawing.Size(12, 15);
+            this.Lbl_Customer_Address.TabIndex = 7;
+            this.Lbl_Customer_Address.Text = "?";
+            // 
+            // Lbl_Customer_Name
+            // 
+            this.Lbl_Customer_Name.AutoSize = true;
+            this.Lbl_Customer_Name.Location = new System.Drawing.Point(118, 24);
+            this.Lbl_Customer_Name.Name = "Lbl_Customer_Name";
+            this.Lbl_Customer_Name.Size = new System.Drawing.Size(12, 15);
+            this.Lbl_Customer_Name.TabIndex = 3;
+            this.Lbl_Customer_Name.Text = "?";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(21, 111);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(21, 15);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "IČ:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 82);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(31, 15);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "PSČ:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(21, 53);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 15);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Adresa:";
+            // 
             // Btn_Customer_Edit
             // 
             this.Btn_Customer_Edit.Location = new System.Drawing.Point(238, 155);
@@ -197,6 +334,7 @@
             this.Btn_Customer_Edit.TabIndex = 0;
             this.Btn_Customer_Edit.Text = "Upravit";
             this.Btn_Customer_Edit.UseVisualStyleBackColor = true;
+            this.Btn_Customer_Edit.Click += new System.EventHandler(this.Btn_Customer_Edit_Click);
             // 
             // label2
             // 
@@ -227,6 +365,7 @@
             this.Btn_Measure_Add.TabIndex = 3;
             this.Btn_Measure_Add.Text = "Přidat";
             this.Btn_Measure_Add.UseVisualStyleBackColor = true;
+            this.Btn_Measure_Add.Click += new System.EventHandler(this.Btn_Measure_Add_Click);
             // 
             // Btn_Measure_Edit
             // 
@@ -236,6 +375,7 @@
             this.Btn_Measure_Edit.TabIndex = 2;
             this.Btn_Measure_Edit.Text = "Upravit";
             this.Btn_Measure_Edit.UseVisualStyleBackColor = true;
+            this.Btn_Measure_Edit.Click += new System.EventHandler(this.Btn_Measure_Edit_Click);
             // 
             // Btn_Measure_Remove
             // 
@@ -245,6 +385,7 @@
             this.Btn_Measure_Remove.TabIndex = 1;
             this.Btn_Measure_Remove.Text = "Smazat";
             this.Btn_Measure_Remove.UseVisualStyleBackColor = true;
+            this.Btn_Measure_Remove.Click += new System.EventHandler(this.Btn_Measure_Remove_Click);
             // 
             // dataGridView1
             // 
@@ -290,141 +431,6 @@
             this.Btn_Export.TabIndex = 17;
             this.Btn_Export.Text = "Export";
             this.Btn_Export.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 53);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 15);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Adresa:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 82);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 15);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "PSČ:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 111);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(21, 15);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "IČ:";
-            // 
-            // Lbl_Customer_Name
-            // 
-            this.Lbl_Customer_Name.AutoSize = true;
-            this.Lbl_Customer_Name.Location = new System.Drawing.Point(118, 24);
-            this.Lbl_Customer_Name.Name = "Lbl_Customer_Name";
-            this.Lbl_Customer_Name.Size = new System.Drawing.Size(12, 15);
-            this.Lbl_Customer_Name.TabIndex = 3;
-            this.Lbl_Customer_Name.Text = "?";
-            // 
-            // Lbl_Customer_Address
-            // 
-            this.Lbl_Customer_Address.AutoSize = true;
-            this.Lbl_Customer_Address.Location = new System.Drawing.Point(118, 53);
-            this.Lbl_Customer_Address.Name = "Lbl_Customer_Address";
-            this.Lbl_Customer_Address.Size = new System.Drawing.Size(12, 15);
-            this.Lbl_Customer_Address.TabIndex = 7;
-            this.Lbl_Customer_Address.Text = "?";
-            // 
-            // Lbl_Customer_PostalCode
-            // 
-            this.Lbl_Customer_PostalCode.AutoSize = true;
-            this.Lbl_Customer_PostalCode.Location = new System.Drawing.Point(118, 82);
-            this.Lbl_Customer_PostalCode.Name = "Lbl_Customer_PostalCode";
-            this.Lbl_Customer_PostalCode.Size = new System.Drawing.Size(12, 15);
-            this.Lbl_Customer_PostalCode.TabIndex = 8;
-            this.Lbl_Customer_PostalCode.Text = "?";
-            // 
-            // Lbl_Customer_TIN
-            // 
-            this.Lbl_Customer_TIN.AutoSize = true;
-            this.Lbl_Customer_TIN.Location = new System.Drawing.Point(118, 111);
-            this.Lbl_Customer_TIN.Name = "Lbl_Customer_TIN";
-            this.Lbl_Customer_TIN.Size = new System.Drawing.Size(12, 15);
-            this.Lbl_Customer_TIN.TabIndex = 9;
-            this.Lbl_Customer_TIN.Text = "?";
-            // 
-            // Lbl_Device_Manufacturer
-            // 
-            this.Lbl_Device_Manufacturer.AutoSize = true;
-            this.Lbl_Device_Manufacturer.Location = new System.Drawing.Point(26, 24);
-            this.Lbl_Device_Manufacturer.Name = "Lbl_Device_Manufacturer";
-            this.Lbl_Device_Manufacturer.Size = new System.Drawing.Size(53, 15);
-            this.Lbl_Device_Manufacturer.TabIndex = 10;
-            this.Lbl_Device_Manufacturer.Text = "Výrobce:";
-            // 
-            // Lbl_Device_Model
-            // 
-            this.Lbl_Device_Model.AutoSize = true;
-            this.Lbl_Device_Model.Location = new System.Drawing.Point(26, 53);
-            this.Lbl_Device_Model.Name = "Lbl_Device_Model";
-            this.Lbl_Device_Model.Size = new System.Drawing.Size(44, 15);
-            this.Lbl_Device_Model.TabIndex = 11;
-            this.Lbl_Device_Model.Text = "Model:";
-            // 
-            // Lbl_Device_SerialCode
-            // 
-            this.Lbl_Device_SerialCode.AutoSize = true;
-            this.Lbl_Device_SerialCode.Location = new System.Drawing.Point(26, 82);
-            this.Lbl_Device_SerialCode.Name = "Lbl_Device_SerialCode";
-            this.Lbl_Device_SerialCode.Size = new System.Drawing.Size(75, 15);
-            this.Lbl_Device_SerialCode.TabIndex = 12;
-            this.Lbl_Device_SerialCode.Text = "Sériové číslo:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(123, 24);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(12, 15);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "?";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(123, 53);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(12, 15);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "?";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(123, 82);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(12, 15);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "?";
-            // 
-            // Lbl_Protocol_Number
-            // 
-            this.Lbl_Protocol_Number.AutoSize = true;
-            this.Lbl_Protocol_Number.Location = new System.Drawing.Point(118, 18);
-            this.Lbl_Protocol_Number.Name = "Lbl_Protocol_Number";
-            this.Lbl_Protocol_Number.Size = new System.Drawing.Size(12, 15);
-            this.Lbl_Protocol_Number.TabIndex = 3;
-            this.Lbl_Protocol_Number.Text = "?";
-            // 
-            // Lbl_Measure_Date
-            // 
-            this.Lbl_Measure_Date.AutoSize = true;
-            this.Lbl_Measure_Date.Location = new System.Drawing.Point(118, 48);
-            this.Lbl_Measure_Date.Name = "Lbl_Measure_Date";
-            this.Lbl_Measure_Date.Size = new System.Drawing.Size(12, 15);
-            this.Lbl_Measure_Date.TabIndex = 4;
-            this.Lbl_Measure_Date.Text = "?";
             // 
             // MainForm
             // 
@@ -482,20 +488,20 @@
         private Button Btn_Import;
         private Button Btn_Preview;
         private Button Btn_Export;
-        private Label Lbl_Measure_Date;
-        private Label Lbl_Protocol_Number;
-        private Label label20;
-        private Label label19;
-        private Label label18;
-        private Label Lbl_Device_SerialCode;
-        private Label Lbl_Device_Model;
-        private Label Lbl_Device_Manufacturer;
-        private Label Lbl_Customer_TIN;
-        private Label Lbl_Customer_PostalCode;
-        private Label Lbl_Customer_Address;
-        private Label Lbl_Customer_Name;
+        private Label xxxx;
+        private Label xxx;
+        private Label xx;
         private Label label10;
         private Label label9;
         private Label label8;
+        public Label Lbl_Measure_Date;
+        public Label Lbl_Protocol_Number;
+        public Label Lbl_Device_SerialCode;
+        public Label Lbl_Device_Model;
+        public Label Lbl_Device_Manufacturer;
+        public Label Lbl_Customer_TIN;
+        public Label Lbl_Customer_PostalCode;
+        public Label Lbl_Customer_Address;
+        public Label Lbl_Customer_Name;
     }
 }

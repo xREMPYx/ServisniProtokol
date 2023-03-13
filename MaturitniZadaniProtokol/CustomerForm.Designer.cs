@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtBox_Name = new System.Windows.Forms.TextBox();
             this.TxtBox_Address = new System.Windows.Forms.TextBox();
@@ -38,6 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Btn_Cancel = new System.Windows.Forms.Button();
             this.Btn_Confirm = new System.Windows.Forms.Button();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,6 +58,7 @@
             this.TxtBox_Name.Name = "TxtBox_Name";
             this.TxtBox_Name.Size = new System.Drawing.Size(302, 23);
             this.TxtBox_Name.TabIndex = 1;
+            this.TxtBox_Name.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // TxtBox_Address
             // 
@@ -62,6 +66,7 @@
             this.TxtBox_Address.Name = "TxtBox_Address";
             this.TxtBox_Address.Size = new System.Drawing.Size(302, 23);
             this.TxtBox_Address.TabIndex = 3;
+            this.TxtBox_Address.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // label2
             // 
@@ -78,6 +83,7 @@
             this.TxtBox_TIN.Name = "TxtBox_TIN";
             this.TxtBox_TIN.Size = new System.Drawing.Size(302, 23);
             this.TxtBox_TIN.TabIndex = 7;
+            this.TxtBox_TIN.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_TIN_Validating);
             // 
             // label3
             // 
@@ -94,6 +100,7 @@
             this.TxtBox_PostalCode.Name = "TxtBox_PostalCode";
             this.TxtBox_PostalCode.Size = new System.Drawing.Size(302, 23);
             this.TxtBox_PostalCode.TabIndex = 5;
+            this.TxtBox_PostalCode.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_PostalCode_Validating);
             // 
             // label4
             // 
@@ -124,10 +131,15 @@
             this.Btn_Confirm.UseVisualStyleBackColor = true;
             this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
             // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(402, 184);
             this.Controls.Add(this.Btn_Confirm);
             this.Controls.Add(this.Btn_Cancel);
@@ -141,6 +153,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CustomerForm";
             this.Text = "Zákazník";
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +171,6 @@
         private Label label4;
         private Button Btn_Cancel;
         private Button Btn_Confirm;
+        private ErrorProvider ErrorProvider;
     }
 }

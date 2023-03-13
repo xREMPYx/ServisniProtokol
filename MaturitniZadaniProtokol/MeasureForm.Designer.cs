@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Btn_Cancel = new System.Windows.Forms.Button();
             this.Btn_Confirm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,7 +38,9 @@
             this.TxtBox_Parameter = new System.Windows.Forms.TextBox();
             this.TxtBox_Value = new System.Windows.Forms.TextBox();
             this.TxtBox_Unit = new System.Windows.Forms.TextBox();
-            this.CheckBox_Suit = new System.Windows.Forms.CheckBox();
+            this.CheckBox_Suits = new System.Windows.Forms.CheckBox();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Cancel
@@ -102,6 +105,7 @@
             this.TxtBox_Parameter.Name = "TxtBox_Parameter";
             this.TxtBox_Parameter.Size = new System.Drawing.Size(230, 23);
             this.TxtBox_Parameter.TabIndex = 6;
+            this.TxtBox_Parameter.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // TxtBox_Value
             // 
@@ -109,6 +113,7 @@
             this.TxtBox_Value.Name = "TxtBox_Value";
             this.TxtBox_Value.Size = new System.Drawing.Size(230, 23);
             this.TxtBox_Value.TabIndex = 7;
+            this.TxtBox_Value.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_Value_Validating);
             // 
             // TxtBox_Unit
             // 
@@ -116,22 +121,28 @@
             this.TxtBox_Unit.Name = "TxtBox_Unit";
             this.TxtBox_Unit.Size = new System.Drawing.Size(230, 23);
             this.TxtBox_Unit.TabIndex = 8;
+            this.TxtBox_Unit.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
-            // CheckBox_Suit
+            // CheckBox_Suits
             // 
-            this.CheckBox_Suit.AutoSize = true;
-            this.CheckBox_Suit.Location = new System.Drawing.Point(145, 88);
-            this.CheckBox_Suit.Name = "CheckBox_Suit";
-            this.CheckBox_Suit.Size = new System.Drawing.Size(15, 14);
-            this.CheckBox_Suit.TabIndex = 9;
-            this.CheckBox_Suit.UseVisualStyleBackColor = true;
+            this.CheckBox_Suits.AutoSize = true;
+            this.CheckBox_Suits.Location = new System.Drawing.Point(145, 88);
+            this.CheckBox_Suits.Name = "CheckBox_Suits";
+            this.CheckBox_Suits.Size = new System.Drawing.Size(15, 14);
+            this.CheckBox_Suits.TabIndex = 9;
+            this.CheckBox_Suits.UseVisualStyleBackColor = true;
+            // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
             // 
             // MeasureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(387, 155);
-            this.Controls.Add(this.CheckBox_Suit);
+            this.Controls.Add(this.CheckBox_Suits);
             this.Controls.Add(this.TxtBox_Unit);
             this.Controls.Add(this.TxtBox_Value);
             this.Controls.Add(this.TxtBox_Parameter);
@@ -143,6 +154,7 @@
             this.Controls.Add(this.Btn_Cancel);
             this.Name = "MeasureForm";
             this.Text = "Měření";
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +171,7 @@
         private TextBox TxtBox_Parameter;
         private TextBox TxtBox_Value;
         private TextBox TxtBox_Unit;
-        private CheckBox CheckBox_Suit;
+        private CheckBox CheckBox_Suits;
+        private ErrorProvider ErrorProvider;
     }
 }

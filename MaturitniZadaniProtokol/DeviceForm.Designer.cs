@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.TxtBox_Manufacturer = new System.Windows.Forms.TextBox();
             this.TxtBox_Model = new System.Windows.Forms.TextBox();
             this.TxtBox_SerialCode = new System.Windows.Forms.TextBox();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,6 +94,7 @@
             this.TxtBox_Manufacturer.Name = "TxtBox_Manufacturer";
             this.TxtBox_Manufacturer.Size = new System.Drawing.Size(198, 23);
             this.TxtBox_Manufacturer.TabIndex = 5;
+            this.TxtBox_Manufacturer.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // TxtBox_Model
             // 
@@ -98,6 +102,7 @@
             this.TxtBox_Model.Name = "TxtBox_Model";
             this.TxtBox_Model.Size = new System.Drawing.Size(198, 23);
             this.TxtBox_Model.TabIndex = 6;
+            this.TxtBox_Model.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // TxtBox_SerialCode
             // 
@@ -105,11 +110,17 @@
             this.TxtBox_SerialCode.Name = "TxtBox_SerialCode";
             this.TxtBox_SerialCode.Size = new System.Drawing.Size(198, 23);
             this.TxtBox_SerialCode.TabIndex = 7;
+            this.TxtBox_SerialCode.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
+            // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
             // 
             // DeviceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(324, 148);
             this.Controls.Add(this.TxtBox_SerialCode);
             this.Controls.Add(this.TxtBox_Model);
@@ -121,6 +132,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DeviceForm";
             this.Text = "Zařízení";
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +148,6 @@
         private TextBox TxtBox_Manufacturer;
         private TextBox TxtBox_Model;
         private TextBox TxtBox_SerialCode;
+        private ErrorProvider ErrorProvider;
     }
 }

@@ -8,5 +8,9 @@ namespace MaturitniZadaniProtokol.Models
 {
     public class CustomerModel
     {
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string PostalCode { get; set; }
+        public string TIN { get; set; }
     }
 }
