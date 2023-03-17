@@ -48,7 +48,7 @@
             this.Btn_Cancel.Location = new System.Drawing.Point(300, 123);
             this.Btn_Cancel.Name = "Btn_Cancel";
             this.Btn_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Cancel.TabIndex = 0;
+            this.Btn_Cancel.TabIndex = 5;
             this.Btn_Cancel.Text = "Zrušit";
             this.Btn_Cancel.UseVisualStyleBackColor = true;
             this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
@@ -58,7 +58,7 @@
             this.Btn_Confirm.Location = new System.Drawing.Point(219, 123);
             this.Btn_Confirm.Name = "Btn_Confirm";
             this.Btn_Confirm.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Confirm.TabIndex = 1;
+            this.Btn_Confirm.TabIndex = 4;
             this.Btn_Confirm.Text = "Potvrdit";
             this.Btn_Confirm.UseVisualStyleBackColor = true;
             this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
@@ -104,7 +104,7 @@
             this.TxtBox_Parameter.Location = new System.Drawing.Point(145, 6);
             this.TxtBox_Parameter.Name = "TxtBox_Parameter";
             this.TxtBox_Parameter.Size = new System.Drawing.Size(230, 23);
-            this.TxtBox_Parameter.TabIndex = 6;
+            this.TxtBox_Parameter.TabIndex = 0;
             this.TxtBox_Parameter.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // TxtBox_Value
@@ -112,7 +112,7 @@
             this.TxtBox_Value.Location = new System.Drawing.Point(145, 32);
             this.TxtBox_Value.Name = "TxtBox_Value";
             this.TxtBox_Value.Size = new System.Drawing.Size(230, 23);
-            this.TxtBox_Value.TabIndex = 7;
+            this.TxtBox_Value.TabIndex = 1;
             this.TxtBox_Value.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_Value_Validating);
             // 
             // TxtBox_Unit
@@ -120,7 +120,7 @@
             this.TxtBox_Unit.Location = new System.Drawing.Point(145, 58);
             this.TxtBox_Unit.Name = "TxtBox_Unit";
             this.TxtBox_Unit.Size = new System.Drawing.Size(230, 23);
-            this.TxtBox_Unit.TabIndex = 8;
+            this.TxtBox_Unit.TabIndex = 2;
             this.TxtBox_Unit.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // CheckBox_Suits
@@ -129,7 +129,7 @@
             this.CheckBox_Suits.Location = new System.Drawing.Point(145, 88);
             this.CheckBox_Suits.Name = "CheckBox_Suits";
             this.CheckBox_Suits.Size = new System.Drawing.Size(15, 14);
-            this.CheckBox_Suits.TabIndex = 9;
+            this.CheckBox_Suits.TabIndex = 3;
             this.CheckBox_Suits.UseVisualStyleBackColor = true;
             // 
             // ErrorProvider
@@ -152,6 +152,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_Confirm);
             this.Controls.Add(this.Btn_Cancel);
+            this.MaximumSize = new System.Drawing.Size(403, 194);
+            this.MinimumSize = new System.Drawing.Size(403, 194);
             this.Name = "MeasureForm";
             this.Text = "Měření";
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();

@@ -232,7 +232,7 @@
             this.Btn_Device_Edit.Location = new System.Drawing.Point(238, 155);
             this.Btn_Device_Edit.Name = "Btn_Device_Edit";
             this.Btn_Device_Edit.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Device_Edit.TabIndex = 0;
+            this.Btn_Device_Edit.TabIndex = 2;
             this.Btn_Device_Edit.Text = "Upravit";
             this.Btn_Device_Edit.UseVisualStyleBackColor = true;
             this.Btn_Device_Edit.Click += new System.EventHandler(this.Btn_Device_Edit_Click);
@@ -331,7 +331,7 @@
             this.Btn_Customer_Edit.Location = new System.Drawing.Point(238, 155);
             this.Btn_Customer_Edit.Name = "Btn_Customer_Edit";
             this.Btn_Customer_Edit.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Customer_Edit.TabIndex = 0;
+            this.Btn_Customer_Edit.TabIndex = 1;
             this.Btn_Customer_Edit.Text = "Upravit";
             this.Btn_Customer_Edit.UseVisualStyleBackColor = true;
             this.Btn_Customer_Edit.Click += new System.EventHandler(this.Btn_Customer_Edit_Click);
@@ -372,7 +372,7 @@
             this.Btn_Measure_Edit.Location = new System.Drawing.Point(481, 245);
             this.Btn_Measure_Edit.Name = "Btn_Measure_Edit";
             this.Btn_Measure_Edit.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Measure_Edit.TabIndex = 2;
+            this.Btn_Measure_Edit.TabIndex = 4;
             this.Btn_Measure_Edit.Text = "Upravit";
             this.Btn_Measure_Edit.UseVisualStyleBackColor = true;
             this.Btn_Measure_Edit.Click += new System.EventHandler(this.Btn_Measure_Edit_Click);
@@ -382,7 +382,7 @@
             this.Btn_Measure_Remove.Location = new System.Drawing.Point(562, 245);
             this.Btn_Measure_Remove.Name = "Btn_Measure_Remove";
             this.Btn_Measure_Remove.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Measure_Remove.TabIndex = 1;
+            this.Btn_Measure_Remove.TabIndex = 5;
             this.Btn_Measure_Remove.Text = "Smazat";
             this.Btn_Measure_Remove.UseVisualStyleBackColor = true;
             this.Btn_Measure_Remove.Click += new System.EventHandler(this.Btn_Measure_Remove_Click);
@@ -396,13 +396,14 @@
             this.DataGridView.RowTemplate.Height = 25;
             this.DataGridView.Size = new System.Drawing.Size(616, 214);
             this.DataGridView.TabIndex = 0;
+            this.DataGridView.TabStop = false;
             // 
             // Btn_Save
             // 
             this.Btn_Save.Location = new System.Drawing.Point(12, 642);
             this.Btn_Save.Name = "Btn_Save";
             this.Btn_Save.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Save.TabIndex = 14;
+            this.Btn_Save.TabIndex = 6;
             this.Btn_Save.Text = "Uložit";
             this.Btn_Save.UseVisualStyleBackColor = true;
             this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
@@ -412,7 +413,7 @@
             this.Btn_Import.Location = new System.Drawing.Point(93, 642);
             this.Btn_Import.Name = "Btn_Import";
             this.Btn_Import.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Import.TabIndex = 15;
+            this.Btn_Import.TabIndex = 7;
             this.Btn_Import.Text = "Načíst";
             this.Btn_Import.UseVisualStyleBackColor = true;
             this.Btn_Import.Click += new System.EventHandler(this.Btn_Import_Click);
@@ -422,7 +423,7 @@
             this.Btn_Preview.Location = new System.Drawing.Point(603, 642);
             this.Btn_Preview.Name = "Btn_Preview";
             this.Btn_Preview.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Preview.TabIndex = 16;
+            this.Btn_Preview.TabIndex = 9;
             this.Btn_Preview.Text = "Náhled";
             this.Btn_Preview.UseVisualStyleBackColor = true;
             this.Btn_Preview.Click += new System.EventHandler(this.Btn_Preview_Click);
@@ -432,7 +433,7 @@
             this.Btn_Export.Location = new System.Drawing.Point(522, 642);
             this.Btn_Export.Name = "Btn_Export";
             this.Btn_Export.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Export.TabIndex = 17;
+            this.Btn_Export.TabIndex = 8;
             this.Btn_Export.Text = "Export";
             this.Btn_Export.UseVisualStyleBackColor = true;
             this.Btn_Export.Click += new System.EventHandler(this.Btn_Export_Click);

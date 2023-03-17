@@ -73,7 +73,7 @@
             this.Btn_Cancel.Location = new System.Drawing.Point(237, 113);
             this.Btn_Cancel.Name = "Btn_Cancel";
             this.Btn_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Cancel.TabIndex = 3;
+            this.Btn_Cancel.TabIndex = 4;
             this.Btn_Cancel.Text = "Zrušit";
             this.Btn_Cancel.UseVisualStyleBackColor = true;
             this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
@@ -83,7 +83,7 @@
             this.Btn_Confirm.Location = new System.Drawing.Point(156, 113);
             this.Btn_Confirm.Name = "Btn_Confirm";
             this.Btn_Confirm.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Confirm.TabIndex = 4;
+            this.Btn_Confirm.TabIndex = 3;
             this.Btn_Confirm.Text = "Potvrdit";
             this.Btn_Confirm.UseVisualStyleBackColor = true;
             this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
@@ -93,7 +93,7 @@
             this.TxtBox_Manufacturer.Location = new System.Drawing.Point(114, 9);
             this.TxtBox_Manufacturer.Name = "TxtBox_Manufacturer";
             this.TxtBox_Manufacturer.Size = new System.Drawing.Size(198, 23);
-            this.TxtBox_Manufacturer.TabIndex = 5;
+            this.TxtBox_Manufacturer.TabIndex = 0;
             this.TxtBox_Manufacturer.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // TxtBox_Model
@@ -101,7 +101,7 @@
             this.TxtBox_Model.Location = new System.Drawing.Point(114, 36);
             this.TxtBox_Model.Name = "TxtBox_Model";
             this.TxtBox_Model.Size = new System.Drawing.Size(198, 23);
-            this.TxtBox_Model.TabIndex = 6;
+            this.TxtBox_Model.TabIndex = 1;
             this.TxtBox_Model.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // TxtBox_SerialCode
@@ -109,7 +109,7 @@
             this.TxtBox_SerialCode.Location = new System.Drawing.Point(114, 63);
             this.TxtBox_SerialCode.Name = "TxtBox_SerialCode";
             this.TxtBox_SerialCode.Size = new System.Drawing.Size(198, 23);
-            this.TxtBox_SerialCode.TabIndex = 7;
+            this.TxtBox_SerialCode.TabIndex = 2;
             this.TxtBox_SerialCode.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // ErrorProvider
@@ -130,6 +130,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(340, 187);
+            this.MinimumSize = new System.Drawing.Size(340, 187);
             this.Name = "DeviceForm";
             this.Text = "Zařízení";
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();

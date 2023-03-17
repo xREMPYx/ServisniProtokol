@@ -47,6 +47,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 722);
             this.Controls.Add(this.pictureBox1);
+            this.MaximumSize = new System.Drawing.Size(737, 761);
+            this.MinimumSize = new System.Drawing.Size(737, 761);
             this.Name = "PreviewForm";
             this.Text = "PreviewForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

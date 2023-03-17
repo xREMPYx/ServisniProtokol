@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaturitniZadaniProtokol.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -73,6 +74,44 @@ namespace MaturitniZadaniProtokol.Services
                 e.Cancel = false;
                 _errorProvider.SetError(txtBox, string.Empty);
             }
+        }
+
+        public static bool IsProtocolValid(ProtocolModel model)
+        {
+            string measurementValuePattern = @"^[\d\.]+$";
+            string tinPattern = @"^\d{6}$";
+            string postalCodepattern = @"^\d{3} \d{2}$";
+
+            Regex tinRegex = new Regex(tinPattern);
+            Regex postalCodeRegex = new Regex(postalCodepattern);
+            Regex measurementValueRegex = new Regex(measurementValuePattern);
+
+            bool isAnyDeviceValueEmpty = IsAnyValueEmpty(model.Device.Manufacturer, model.Device.Model, model.Device.SerialCode);
+            bool isAnyCustomerValueEmpty = IsAnyValueEmpty(model.Customer.Name, model.Customer.Address, model.Customer.PostalCode, model.Customer.TIN);
+            bool isAnyInfoValueEmpty = IsAnyValueEmpty(model.BasicInformation.MeasurementDate.ToString(), model.BasicInformation.ProtocolNumber);
+
+            bool isAnyMeasurementValueEmpty = model.Measurements.Any(x => IsAnyValueEmpty(x.Unit, x.Parameter, x.Value, x.SuitsText));
+
+            if (isAnyDeviceValueEmpty || isAnyCustomerValueEmpty || isAnyInfoValueEmpty || isAnyMeasurementValueEmpty)
+            {
+                return false;
+            }
+
+            bool areMeasurementValuesValid = model.Measurements.Any(x => measurementValueRegex.IsMatch(x.Value));
+            bool isTinValid = tinRegex.IsMatch(model.Customer.TIN);
+            bool isPostalCodeValid = postalCodeRegex.IsMatch(model.Customer.PostalCode);
+
+            if (!areMeasurementValuesValid || !isTinValid || !isPostalCodeValid)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private static bool IsAnyValueEmpty(params string[] values)
+        {
+            return values.Any(x => string.IsNullOrEmpty(x));
         }
     }
 }

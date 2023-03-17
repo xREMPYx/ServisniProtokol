@@ -147,15 +147,33 @@ namespace MaturitniZadaniProtokol.Services
             using (OpenFileDialog fileDialog = new OpenFileDialog())
             {
                 if (fileDialog.ShowDialog() == DialogResult.OK)
-                {                    
-                    ProtocolModel model = GetProtocolModel(fileDialog.FileName);
+                {
+                    ProtocolModel model;
+
+                    try
+                    {
+                        model = GetProtocolModel(fileDialog.FileName);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Zvolený soubor se nepodařilo zpracovat.");
+                        return;
+                    }
+
+                    if (!ValidationService.IsProtocolValid(model))
+                    {
+                        MessageBox.Show("Zvolený soubor byl narušen.");
+                        return;
+                    }
 
                     foreach (IModelService service in _services)
                     {
                         service.Update(model);
                     }
                 }
-            };                        
+            };
+
+            MessageBox.Show("Soubor byl úspěšně nahrán.");
         }
 
         public void Save()
@@ -173,7 +191,15 @@ namespace MaturitniZadaniProtokol.Services
 
                 if (fileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    Save(model, fileDialog.FileName);
+                    try
+                    {
+                        Save(model, fileDialog.FileName);
+                        MessageBox.Show("Soubor byl úspěšně uložen.");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Soubor se nepodařilo uložit.");
+                    }
                 }
             };            
         }

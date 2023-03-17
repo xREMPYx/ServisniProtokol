@@ -57,7 +57,7 @@
             this.TxtBox_Name.Location = new System.Drawing.Point(88, 6);
             this.TxtBox_Name.Name = "TxtBox_Name";
             this.TxtBox_Name.Size = new System.Drawing.Size(302, 23);
-            this.TxtBox_Name.TabIndex = 1;
+            this.TxtBox_Name.TabIndex = 0;
             this.TxtBox_Name.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // TxtBox_Address
@@ -65,7 +65,7 @@
             this.TxtBox_Address.Location = new System.Drawing.Point(88, 35);
             this.TxtBox_Address.Name = "TxtBox_Address";
             this.TxtBox_Address.Size = new System.Drawing.Size(302, 23);
-            this.TxtBox_Address.TabIndex = 3;
+            this.TxtBox_Address.TabIndex = 1;
             this.TxtBox_Address.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_EmptyValidating);
             // 
             // label2
@@ -82,7 +82,7 @@
             this.TxtBox_TIN.Location = new System.Drawing.Point(88, 93);
             this.TxtBox_TIN.Name = "TxtBox_TIN";
             this.TxtBox_TIN.Size = new System.Drawing.Size(302, 23);
-            this.TxtBox_TIN.TabIndex = 7;
+            this.TxtBox_TIN.TabIndex = 3;
             this.TxtBox_TIN.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_TIN_Validating);
             // 
             // label3
@@ -99,7 +99,7 @@
             this.TxtBox_PostalCode.Location = new System.Drawing.Point(88, 64);
             this.TxtBox_PostalCode.Name = "TxtBox_PostalCode";
             this.TxtBox_PostalCode.Size = new System.Drawing.Size(302, 23);
-            this.TxtBox_PostalCode.TabIndex = 5;
+            this.TxtBox_PostalCode.TabIndex = 2;
             this.TxtBox_PostalCode.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_PostalCode_Validating);
             // 
             // label4
@@ -116,7 +116,7 @@
             this.Btn_Cancel.Location = new System.Drawing.Point(315, 149);
             this.Btn_Cancel.Name = "Btn_Cancel";
             this.Btn_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Cancel.TabIndex = 8;
+            this.Btn_Cancel.TabIndex = 5;
             this.Btn_Cancel.Text = "Zrušit";
             this.Btn_Cancel.UseVisualStyleBackColor = true;
             this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
@@ -126,7 +126,7 @@
             this.Btn_Confirm.Location = new System.Drawing.Point(234, 149);
             this.Btn_Confirm.Name = "Btn_Confirm";
             this.Btn_Confirm.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Confirm.TabIndex = 9;
+            this.Btn_Confirm.TabIndex = 4;
             this.Btn_Confirm.Text = "Potvrdit";
             this.Btn_Confirm.UseVisualStyleBackColor = true;
             this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
@@ -151,6 +151,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TxtBox_Name);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(418, 223);
+            this.MinimumSize = new System.Drawing.Size(418, 223);
             this.Name = "CustomerForm";
             this.Text = "Zákazník";
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();

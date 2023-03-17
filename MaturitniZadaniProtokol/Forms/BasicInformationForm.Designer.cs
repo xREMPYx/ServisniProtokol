@@ -44,7 +44,7 @@
             this.Btn_Cancel.Location = new System.Drawing.Point(277, 92);
             this.Btn_Cancel.Name = "Btn_Cancel";
             this.Btn_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Cancel.TabIndex = 0;
+            this.Btn_Cancel.TabIndex = 3;
             this.Btn_Cancel.Text = "Zrušit";
             this.Btn_Cancel.UseVisualStyleBackColor = true;
             this.Btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
@@ -54,7 +54,7 @@
             this.Btn_Confirm.Location = new System.Drawing.Point(196, 92);
             this.Btn_Confirm.Name = "Btn_Confirm";
             this.Btn_Confirm.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Confirm.TabIndex = 1;
+            this.Btn_Confirm.TabIndex = 2;
             this.Btn_Confirm.Text = "Potvrdit";
             this.Btn_Confirm.UseVisualStyleBackColor = true;
             this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
@@ -82,14 +82,14 @@
             this.DateTimePicker_Measure_Date.Location = new System.Drawing.Point(152, 43);
             this.DateTimePicker_Measure_Date.Name = "DateTimePicker_Measure_Date";
             this.DateTimePicker_Measure_Date.Size = new System.Drawing.Size(200, 23);
-            this.DateTimePicker_Measure_Date.TabIndex = 4;
+            this.DateTimePicker_Measure_Date.TabIndex = 1;
             // 
             // TxtBox_ProtocolNumber
             // 
             this.TxtBox_ProtocolNumber.Location = new System.Drawing.Point(152, 15);
             this.TxtBox_ProtocolNumber.Name = "TxtBox_ProtocolNumber";
             this.TxtBox_ProtocolNumber.Size = new System.Drawing.Size(200, 23);
-            this.TxtBox_ProtocolNumber.TabIndex = 5;
+            this.TxtBox_ProtocolNumber.TabIndex = 0;
             this.TxtBox_ProtocolNumber.Validating += new System.ComponentModel.CancelEventHandler(this.TxtBox_ProtocolNumber_Validating);
             // 
             // ErrorProvider
@@ -108,6 +108,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_Confirm);
             this.Controls.Add(this.Btn_Cancel);
+            this.MaximumSize = new System.Drawing.Size(380, 163);
+            this.MinimumSize = new System.Drawing.Size(380, 163);
             this.Name = "BasicInformationForm";
             this.Text = "Základní informace";
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
