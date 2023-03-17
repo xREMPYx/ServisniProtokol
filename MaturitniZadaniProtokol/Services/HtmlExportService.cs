@@ -28,14 +28,15 @@ namespace MaturitniZadaniProtokol.Services
             stringBuilder.AppendLine("</head>");
             stringBuilder.AppendLine("<body>");
 
-            stringBuilder.AppendLine("<div id='protokol'>");
-            stringBuilder.AppendLine("<div id='protokol'>");
+            stringBuilder.AppendLine("<div id='protokol'>");  
             
             stringBuilder.AppendLine("<h1>Potvrzení o provedení měření</h1>");
             stringBuilder.AppendLine(GetBasicInformations(model.BasicInformation));
             stringBuilder.AppendLine(GetCustomer(model.Customer));
             stringBuilder.AppendLine(GetDevice(model.Device));
             stringBuilder.AppendLine(GetMeasurements(model.Measurements));
+
+            stringBuilder.AppendLine("</div>");
 
             stringBuilder.AppendLine("</body>");
             stringBuilder.AppendLine("</html>");
@@ -93,13 +94,14 @@ namespace MaturitniZadaniProtokol.Services
             stringBuilder.AppendLine($"<th>Parametr</th>");
             stringBuilder.AppendLine($"<th>Naměřená hodnota</th>");
             stringBuilder.AppendLine($"<th>Vyhovuje</th>");            
+            stringBuilder.AppendLine($"</tr>");            
 
             foreach (MeasurementModel model in models)
             {
                 stringBuilder.AppendLine($"</tr>");
-                stringBuilder.AppendLine($"{model.Parameter}");
-                stringBuilder.AppendLine($"{model.Value}{model.Unit}");
-                stringBuilder.AppendLine($"{model.SuitsText}");
+                stringBuilder.AppendLine($"<td>{model.Parameter}</td>");
+                stringBuilder.AppendLine($"<td>{model.Value}{model.Unit}</td>");
+                stringBuilder.AppendLine($"<td>{model.SuitsText}</td>");
                 stringBuilder.AppendLine($"</tr>");
             }
             
@@ -127,8 +129,8 @@ namespace MaturitniZadaniProtokol.Services
             stringBuilder.AppendLine("div#datum { float:left; margin:1em; width:40%;  }");
             stringBuilder.AppendLine("div#cisloProtokolu { text-align:right; float:right; margin:1em; width:40%; }");
             stringBuilder.AppendLine("div#zaver { text-align:center; font-weight:bold; font-size:1.2em; }");
-            stringBuilder.AppendLine("div#zakaznik { border:1px solid black; margin:1em; padding:1em; width:40%; float:left; }");
-            stringBuilder.AppendLine("div#zarizeni { border:1px solid black; margin:1em; padding:1em; width:40%; float:right; }");
+            stringBuilder.AppendLine("div#zakaznik { border:1px solid black; margin:1em; padding:1em; width:40%; float:left; height: 140px;}");
+            stringBuilder.AppendLine("div#zarizeni { border:1px solid black; margin:1em; padding:1em; width:40%; float:right; height: 140px;}");
             stringBuilder.AppendLine("div#mereni { clear:both; padding:1em; }");
             stringBuilder.AppendLine("div#mereni table { width:100%; }");
             stringBuilder.AppendLine("div#mereni table th { text-align:left; }");

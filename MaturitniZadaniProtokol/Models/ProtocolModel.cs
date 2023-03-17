@@ -42,10 +42,15 @@ namespace MaturitniZadaniProtokol.Models
             {
                 g.DrawString("Zařízení je schopné dalšího provozu", HeadingFont, Brushes.Black, X + 125, Y + offsetY + 35);
             }
+            else
+            {
+                g.DrawString("Zařízení není schopné dalšího provozu", HeadingFont, Brushes.Black, X + 122, Y + offsetY + 35);
+            }
 
-            BasicInformation.Draw(g);
+            Device.Draw(g);
             Customer.Draw(g);
-            Device.Draw(g);            
+            BasicInformation.Draw(g);            
+               
             g.DrawRectangle(Pens.Black, 10, 10, 680, 680);
         }
     }

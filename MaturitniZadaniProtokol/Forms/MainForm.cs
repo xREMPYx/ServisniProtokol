@@ -23,38 +23,46 @@ namespace MaturitniZadaniProtokol
         public MainForm()
         {
             InitializeComponent();
-            _measurementService = new MeasurementService();
-            _customerService = new CustomerService(this);
-            _deviceService = new DeviceService(this);
-            _basicInfoService = new BasicInformationService(this);
+            
+            this._customerService = new CustomerService(this);
+            this._deviceService = new DeviceService(this);
+            this._basicInfoService = new BasicInformationService(this);
 
-            IModelService[] services = { _customerService, _deviceService, _basicInfoService, _measurementService };
+            this._measurementService = new MeasurementService();
 
-            _fileService = new FileService(services);
-            _previewService = new PreviewService(services);
-            _exportService = new HtmlExportService(services);
+            IModelService[] services = 
+            { 
+                _customerService, 
+                _deviceService, 
+                _basicInfoService, 
+                _measurementService             
+            };
+
+            this._fileService = new FileService(services);
+            this._previewService = new PreviewService(services);
+            this._exportService = new HtmlExportService(services);
 
             this.DataGridView.DataSource = _measurementService.GetModel();
         }
 
         private void Btn_Info_Edit_Click(object sender, EventArgs e)
         {
-            _basicInfoService.Edit();
+            this._basicInfoService.Edit();
         }
 
         private void Btn_Customer_Edit_Click(object sender, EventArgs e)
         {
-            _customerService.Edit();            
+            this._customerService.Edit();            
         }
 
         private void Btn_Device_Edit_Click(object sender, EventArgs e)
         {
-            _deviceService.Edit();          
+            this._deviceService.Edit();          
         }
 
         private void Btn_Measure_Add_Click(object sender, EventArgs e)
         {
-            _measurementService.Add();
+            this._measurementService.Add();
         }
 
         private void Btn_Measure_Edit_Click(object sender, EventArgs e)
@@ -66,7 +74,7 @@ namespace MaturitniZadaniProtokol
 
             int index = this.DataGridView.CurrentRow.Index;
 
-            _measurementService.Edit(index);
+            this._measurementService.Edit(index);
         }
 
         private void Btn_Measure_Remove_Click(object sender, EventArgs e)
@@ -78,28 +86,28 @@ namespace MaturitniZadaniProtokol
 
             int index = this.DataGridView.CurrentRow.Index;
 
-            _measurementService.Remove(index);
+            this._measurementService.Remove(index);
         }
 
         private void Btn_Save_Click(object sender, EventArgs e)
         {
-            _fileService.Save();
+            this._fileService.Save();
         }
 
         private void Btn_Import_Click(object sender, EventArgs e)
         {
-            _fileService.Import();
+            this._fileService.Import();
             this.DataGridView.Refresh();
         }
 
         private void Btn_Preview_Click(object sender, EventArgs e)
         {
-            _previewService.Preview();
+            this._previewService.Preview();
         }
 
         private void Btn_Export_Click(object sender, EventArgs e)
         {
-            _exportService.Save();
+            this._exportService.Save();
         }
     }
 }
