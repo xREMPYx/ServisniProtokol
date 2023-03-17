@@ -425,6 +425,7 @@
             this.Btn_Preview.TabIndex = 16;
             this.Btn_Preview.Text = "Náhled";
             this.Btn_Preview.UseVisualStyleBackColor = true;
+            this.Btn_Preview.Click += new System.EventHandler(this.Btn_Preview_Click);
             // 
             // Btn_Export
             // 
@@ -434,6 +435,7 @@
             this.Btn_Export.TabIndex = 17;
             this.Btn_Export.Text = "Export";
             this.Btn_Export.UseVisualStyleBackColor = true;
+            this.Btn_Export.Click += new System.EventHandler(this.Btn_Export_Click);
             // 
             // MainForm
             // 

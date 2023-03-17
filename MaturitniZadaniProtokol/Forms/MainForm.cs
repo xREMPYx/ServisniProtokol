@@ -15,6 +15,10 @@ namespace MaturitniZadaniProtokol
 
         private readonly FileService _fileService;
 
+        private readonly PreviewService _previewService;
+
+        private readonly HtmlExportService _exportService;
+
         
         public MainForm()
         {
@@ -23,7 +27,13 @@ namespace MaturitniZadaniProtokol
             _customerService = new CustomerService(this);
             _deviceService = new DeviceService(this);
             _basicInfoService = new BasicInformationService(this);
-            _fileService = new FileService(_customerService, _deviceService, _basicInfoService, _measurementService);
+
+            IModelService[] services = { _customerService, _deviceService, _basicInfoService, _measurementService };
+
+            _fileService = new FileService(services);
+            _previewService = new PreviewService(services);
+            _exportService = new HtmlExportService(services);
+
             this.DataGridView.DataSource = _measurementService.GetModel();
         }
 
@@ -48,23 +58,27 @@ namespace MaturitniZadaniProtokol
         }
 
         private void Btn_Measure_Edit_Click(object sender, EventArgs e)
-        {
-            int? index = this.DataGridView.CurrentCell.RowIndex;
-
-            if (index == null || index < 0)
+        {            
+            if (_measurementService.GetModel().Count <= 0 || this.DataGridView.SelectedRows.Count <= 0)
+            {
                 return;
+            }
 
-            _measurementService.Edit((int)index);
+            int index = this.DataGridView.CurrentRow.Index;
+
+            _measurementService.Edit(index);
         }
 
         private void Btn_Measure_Remove_Click(object sender, EventArgs e)
         {
-            int? index = this.DataGridView.CurrentCell.RowIndex;
-
-            if (index == null || index < 0)
+            if (_measurementService.GetModel().Count <= 0 || this.DataGridView.SelectedRows.Count <= 0)
+            {
                 return;
+            }
 
-            _measurementService.Remove((int)index);
+            int index = this.DataGridView.CurrentRow.Index;
+
+            _measurementService.Remove(index);
         }
 
         private void Btn_Save_Click(object sender, EventArgs e)
@@ -76,6 +90,16 @@ namespace MaturitniZadaniProtokol
         {
             _fileService.Import();
             this.DataGridView.Refresh();
+        }
+
+        private void Btn_Preview_Click(object sender, EventArgs e)
+        {
+            _previewService.Preview();
+        }
+
+        private void Btn_Export_Click(object sender, EventArgs e)
+        {
+            _exportService.Save();
         }
     }
 }

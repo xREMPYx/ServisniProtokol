@@ -12,7 +12,7 @@ namespace MaturitniZadaniProtokol.Services
     {
         private readonly IModelService[] _services;
 
-        public FileService(params IModelService[] services)
+        public FileService(IModelService[] services)
         {
             this._services = services;
         }
@@ -38,7 +38,7 @@ namespace MaturitniZadaniProtokol.Services
             return result;
         }
 
-        private string GetMeasurementsText(IList<MeasurementModel> models)
+        private string GetMeasurementsText(IEnumerable<MeasurementModel> models)
         {
             StringBuilder sb = new StringBuilder();
 
