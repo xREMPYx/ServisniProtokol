@@ -4,22 +4,16 @@ using MaturitniZadaniProtokol.Services;
 namespace MaturitniZadaniProtokol
 {
     public partial class MainForm : Form
-    {
-        private readonly CustomerService _customerService;
-
-        private readonly DeviceService _deviceService;
-
+    {                                        
+        private readonly DeviceService _deviceService;           
+        private readonly CustomerService _customerService;        
+        private readonly MeasurementService _measurementService;
         private readonly BasicInformationService _basicInfoService;
 
-        private readonly MeasurementService _measurementService;
-
         private readonly FileService _fileService;
-
         private readonly PreviewService _previewService;
-
         private readonly HtmlExportService _exportService;
 
-        
         public MainForm()
         {
             InitializeComponent();

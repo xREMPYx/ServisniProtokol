@@ -19,30 +19,22 @@ namespace MaturitniZadaniProtokol.Services
 
         private string GetInformationText(BasicInformationModel model)
         {
-            string result = $"[BasicInfo];{model.ProtocolNumber};{model.MeasurementDate}";
-
-            return result;
+            return $"{model.ProtocolNumber};{model.MeasurementDate}";
         }
 
         private string GetCustomerText(CustomerModel model)
         {
-            string result = $"[Customer];{model.Name};{model.Address};{model.PostalCode};{model.TIN}";
-
-            return result;
+            return $"{model.Name};{model.Address};{model.PostalCode};{model.TIN}";
         }
 
         private string GetDeviceText(DeviceModel model)
         {
-            string result = $"[Device];{model.Manufacturer};{model.Model};{model.SerialCode}";
-
-            return result;
+            return $"{model.Manufacturer};{model.Model};{model.SerialCode}";
         }
 
         private string GetMeasurementsText(IEnumerable<MeasurementModel> models)
         {
             StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine("[Measurements]");
 
             foreach (MeasurementModel model in models)
             {
@@ -58,8 +50,8 @@ namespace MaturitniZadaniProtokol.Services
 
             return new BasicInformationModel()
             {
-                ProtocolNumber = parts[1],
-                MeasurementDate = DateTime.Parse(parts[2])
+                ProtocolNumber = parts[0],
+                MeasurementDate = DateTime.Parse(parts[1])
             };
         }
 
@@ -69,10 +61,10 @@ namespace MaturitniZadaniProtokol.Services
 
             return new CustomerModel()
             {
-                Name = parts[1],
-                Address = parts[2],
-                PostalCode = parts[3],
-                TIN = parts[4]
+                Name = parts[0],
+                Address = parts[1],
+                PostalCode = parts[2],
+                TIN = parts[3]
             };
         }
 
@@ -82,9 +74,9 @@ namespace MaturitniZadaniProtokol.Services
 
             return new DeviceModel()
             {
-                Manufacturer = parts[1],
-                Model = parts[2],
-                SerialCode = parts[3]
+                Manufacturer = parts[0],
+                Model = parts[1],
+                SerialCode = parts[2]
             };
         }
 
@@ -93,8 +85,7 @@ namespace MaturitniZadaniProtokol.Services
             IList<MeasurementModel> result = new BindingList<MeasurementModel>();
 
             using (StringReader reader = new StringReader(lines))
-            {
-                reader.ReadLine();
+            {                
                 string? line = reader.ReadLine();
                                 
                 while (!string.IsNullOrEmpty(line))
@@ -170,10 +161,10 @@ namespace MaturitniZadaniProtokol.Services
                     {
                         service.Update(model);
                     }
-                }
-            };
 
-            MessageBox.Show("Soubor byl úspěšně nahrán.");
+                    MessageBox.Show("Soubor byl úspěšně nahrán.");
+                }
+            };            
         }
 
         public void Save()
