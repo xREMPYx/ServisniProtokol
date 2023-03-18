@@ -20,16 +20,16 @@ namespace MaturitniZadaniProtokol.Models
             Y = 100;
         }
 
-        public override void Draw(Graphics g)
+        public override void Draw(Graphics graphics)
         {
-            g.DrawRectangle(Pens.Black, X, Y, 310, 130);
+            graphics.DrawRectangle(Pens.Black, X, Y, 310, 130);
 
             int pad = 20;
 
-            g.DrawString("Zařízení", HeadingFont, Brushes.Black, X + 10, Y + 10);
-            g.DrawString($"{"Výrobce:".PadRight(18)}{Manufacturer}", Font, Brushes.Black, X + 10, Y + pad * 2);
-            g.DrawString($"{"Model:".PadRight(19)}{Model}", Font, Brushes.Black, X + 10, Y + pad * 3);
-            g.DrawString($"{"Sériové číslo:".PadRight(17)}{SerialCode}", Font, Brushes.Black, X + 10, Y + pad * 4);                        
+            graphics.DrawString("Zařízení", HeadingFont, Brushes.Black, X + 10, Y + 10);
+            graphics.DrawString($"{"Výrobce:".PadRight(18)}{Manufacturer}", Font, Brushes.Black, X + 10, Y + pad * 2);
+            graphics.DrawString($"{"Model:".PadRight(19)}{Model}", Font, Brushes.Black, X + 10, Y + pad * 3);
+            graphics.DrawString($"{"Sériové číslo:".PadRight(17)}{SerialCode}", Font, Brushes.Black, X + 10, Y + pad * 4);                        
         }
     }
 }

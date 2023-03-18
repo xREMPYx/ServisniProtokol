@@ -20,7 +20,7 @@ namespace MaturitniZadaniProtokol.Models
             HeadingFont = new Font("Arial", 17);
         }
 
-        public abstract void Draw(Graphics g);
+        public abstract void Draw(Graphics graphics);
 
         public void SetX(int x)
         {

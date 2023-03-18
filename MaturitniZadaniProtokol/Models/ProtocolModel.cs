@@ -21,13 +21,13 @@ namespace MaturitniZadaniProtokol.Models
             Y = 300;
         }
 
-        public override void Draw(Graphics g)
+        public override void Draw(Graphics graphics)
         {
-            g.DrawString($"Potvrzení o provedení měření", HeadingFont, Brushes.Black, X + 180, 30);
+            graphics.DrawString($"Potvrzení o provedení měření", HeadingFont, Brushes.Black, X + 180, 30);
 
-            g.DrawString($"Parametr", Font, Brushes.Black, X, Y);
-            g.DrawString($"Naměřená hodnota", Font, Brushes.Black, X + 240, Y);
-            g.DrawString($"Vyhovuje", Font, Brushes.Black, X + 500, Y);
+            graphics.DrawString($"Parametr", Font, Brushes.Black, X, Y);
+            graphics.DrawString($"Naměřená hodnota", Font, Brushes.Black, X + 240, Y);
+            graphics.DrawString($"Vyhovuje", Font, Brushes.Black, X + 500, Y);
 
             int offsetY = 10;
 
@@ -35,23 +35,23 @@ namespace MaturitniZadaniProtokol.Models
             {
                 offsetY += 20;
                 model.SetY(Y + offsetY);
-                model.Draw(g);
+                model.Draw(graphics);
             }
 
             if (Measurements.All(x => x.Suits))
             {
-                g.DrawString("Zařízení je schopné dalšího provozu", HeadingFont, Brushes.Black, X + 125, Y + offsetY + 35);
+                graphics.DrawString("Zařízení je schopné dalšího provozu", HeadingFont, Brushes.Black, X + 125, Y + offsetY + 35);
             }
             else
             {
-                g.DrawString("Zařízení není schopné dalšího provozu", HeadingFont, Brushes.Black, X + 122, Y + offsetY + 35);
+                graphics.DrawString("Zařízení není schopné dalšího provozu", HeadingFont, Brushes.Black, X + 122, Y + offsetY + 35);
             }
 
-            Device.Draw(g);
-            Customer.Draw(g);
-            BasicInformation.Draw(g);            
+            Device.Draw(graphics);
+            Customer.Draw(graphics);
+            BasicInformation.Draw(graphics);            
                
-            g.DrawRectangle(Pens.Black, 10, 10, 680, 680);
+            graphics.DrawRectangle(Pens.Black, 10, 10, 680, 680);
         }
     }
 }

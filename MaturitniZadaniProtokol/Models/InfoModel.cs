@@ -18,10 +18,10 @@ namespace MaturitniZadaniProtokol.Models
             Y = 70;
         }
 
-        public override void Draw(Graphics g)
+        public override void Draw(Graphics graphics)
         {            
-            g.DrawString($"{"Datum měření:".PadRight(20)}{MeasurementDate.ToString("d.M.yyyy")}", Font, Brushes.Black, X, Y);
-            g.DrawString($"{"Číslo protokolu:".PadRight(20)}{ProtocolNumber}", Font, Brushes.Black, X + 350, Y);            
+            graphics.DrawString($"{"Datum měření:".PadRight(20)}{MeasurementDate.ToString("d.M.yyyy")}", Font, Brushes.Black, X, Y);
+            graphics.DrawString($"{"Číslo protokolu:".PadRight(20)}{ProtocolNumber}", Font, Brushes.Black, X + 350, Y);            
         }
     }
 }

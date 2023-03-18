@@ -35,11 +35,11 @@ namespace MaturitniZadaniProtokol.Models
             X = 20;
         }
 
-        public override void Draw(Graphics g)
+        public override void Draw(Graphics graphics)
         {
-            g.DrawString($"{Parameter}", Font, Brushes.Black, X, Y);
-            g.DrawString($"{Value}", Font, Brushes.Black, X + 240, Y);
-            g.DrawString($"{SuitsText}", Font, Brushes.Black, X + 500, Y);
+            graphics.DrawString($"{Parameter}", Font, Brushes.Black, X, Y);
+            graphics.DrawString($"{Value}", Font, Brushes.Black, X + 240, Y);
+            graphics.DrawString($"{SuitsText}", Font, Brushes.Black, X + 500, Y);
         }
     }
 }

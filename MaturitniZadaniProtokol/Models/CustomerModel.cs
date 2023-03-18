@@ -19,17 +19,17 @@ namespace MaturitniZadaniProtokol.Models
             Y = 100;
         }
 
-        public override void Draw(Graphics g)
+        public override void Draw(Graphics graphics)
         {
-            g.DrawRectangle(Pens.Black, X, Y, 310, 130);
+            graphics.DrawRectangle(Pens.Black, X, Y, 310, 130);
 
             int pad = 20;
 
-            g.DrawString("Zákazník", HeadingFont, Brushes.Black, X + 10, Y + 10);
-            g.DrawString($"{"Název:".PadRight(15)}{Name}", Font, Brushes.Black, X + 10, Y + pad * 2);
-            g.DrawString($"{"Adresa:".PadRight(15)}{Address}", Font, Brushes.Black, X + 10, Y + pad * 3);            
-            g.DrawString($"{"PSČ:".PadRight(15)}{PostalCode}", Font, Brushes.Black, X + 10, Y + pad * 4);
-            g.DrawString($"{"IČ:".PadRight(18)}{TIN}", Font, Brushes.Black, X + 10, Y + pad * 5);
+            graphics.DrawString("Zákazník", HeadingFont, Brushes.Black, X + 10, Y + 10);
+            graphics.DrawString($"{"Název:".PadRight(15)}{Name}", Font, Brushes.Black, X + 10, Y + pad * 2);
+            graphics.DrawString($"{"Adresa:".PadRight(15)}{Address}", Font, Brushes.Black, X + 10, Y + pad * 3);            
+            graphics.DrawString($"{"PSČ:".PadRight(15)}{PostalCode}", Font, Brushes.Black, X + 10, Y + pad * 4);
+            graphics.DrawString($"{"IČ:".PadRight(18)}{TIN}", Font, Brushes.Black, X + 10, Y + pad * 5);
         }
     }
 }

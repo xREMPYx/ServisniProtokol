@@ -6,7 +6,7 @@ namespace MaturitniZadaniProtokol
 {
     public partial class MainForm : Form
     {
-        private readonly InfoModelService _InfoService;
+        private readonly InfoModelService _infoService;
         private readonly DeviceModelService _deviceService;           
         private readonly CustomerModelService _customerService;        
         private readonly MeasurementModelService _measurementService;        
@@ -21,7 +21,7 @@ namespace MaturitniZadaniProtokol
             
             this._customerService = new CustomerModelService(this);
             this._deviceService = new DeviceModelService(this);
-            this._InfoService = new InfoModelService(this);
+            this._infoService = new InfoModelService(this);
 
             this._measurementService = new MeasurementModelService();
 
@@ -29,7 +29,7 @@ namespace MaturitniZadaniProtokol
             { 
                 _customerService, 
                 _deviceService, 
-                _InfoService, 
+                _infoService, 
                 _measurementService             
             };
 
@@ -42,7 +42,7 @@ namespace MaturitniZadaniProtokol
 
         private void Btn_Info_Edit_Click(object sender, EventArgs e)
         {
-            this._InfoService.Edit();
+            this._infoService.Edit();
         }
 
         private void Btn_Customer_Edit_Click(object sender, EventArgs e)
