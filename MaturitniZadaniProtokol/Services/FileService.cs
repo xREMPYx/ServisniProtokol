@@ -17,7 +17,7 @@ namespace MaturitniZadaniProtokol.Services
             this._services = services;
         }
 
-        private string GetInformationText(InfoModel model)
+        private string GetInfoText(InfoModel model)
         {
             return $"{model.ProtocolNumber};{model.MeasurementDate}";
         }
@@ -44,7 +44,7 @@ namespace MaturitniZadaniProtokol.Services
             return sb.ToString();
         }        
 
-        private InfoModel GetInformationModel(string line)
+        private InfoModel GetInfoModel(string line)
         {
             string[] parts = line.Split(';');
 
@@ -96,7 +96,7 @@ namespace MaturitniZadaniProtokol.Services
                     {
                         Parameter = parts[0],
                         Value = parts[1],
-                        Suits = parts[2] == "ANO" ? true : false,
+                        Suits = parts[2] == "ANO",
                         Unit = parts[3]
                     });
 
@@ -111,7 +111,7 @@ namespace MaturitniZadaniProtokol.Services
         {
             using (StreamWriter writer = new StreamWriter(path))
             {
-                writer.WriteLine(GetInformationText(model.BasicInformation));
+                writer.WriteLine(GetInfoText(model.Info));
                 writer.WriteLine(GetCustomerText(model.Customer));
                 writer.WriteLine(GetDeviceText(model.Device));
                 writer.WriteLine(GetMeasurementsText(model.Measurements));
@@ -124,7 +124,7 @@ namespace MaturitniZadaniProtokol.Services
 
             using (StreamReader reader = new StreamReader(path))
             {
-                result.BasicInformation = GetInformationModel(reader.ReadLine());
+                result.Info = GetInfoModel(reader.ReadLine());
                 result.Customer = GetCustomerModel(reader.ReadLine());
                 result.Device = GetDeviceModel(reader.ReadLine());
                 result.Measurements = GetMeasurementModels(reader.ReadToEnd());

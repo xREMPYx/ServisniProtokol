@@ -31,7 +31,7 @@ namespace MaturitniZadaniProtokol.Services
             stringBuilder.AppendLine("<div id='protokol'>");  
             
             stringBuilder.AppendLine("<h1>Potvrzení o provedení měření</h1>");
-            stringBuilder.AppendLine(GetBasicInformations(model.BasicInformation));
+            stringBuilder.AppendLine(GetBasicInformations(model.Info));
             stringBuilder.AppendLine(GetCustomer(model.Customer));
             stringBuilder.AppendLine(GetDevice(model.Device));
             stringBuilder.AppendLine(GetMeasurements(model.Measurements));

@@ -10,7 +10,7 @@ namespace MaturitniZadaniProtokol.Models
 {
     public class ProtocolModel : BaseDrawableModel
     {
-        public InfoModel BasicInformation { get; set; }
+        public InfoModel Info { get; set; }
         public CustomerModel Customer { get; set; }
         public DeviceModel Device { get; set; }
         public IList<MeasurementModel> Measurements { get; set; }
@@ -49,7 +49,7 @@ namespace MaturitniZadaniProtokol.Models
 
             Device.Draw(graphics);
             Customer.Draw(graphics);
-            BasicInformation.Draw(graphics);            
+            Info.Draw(graphics);            
                
             graphics.DrawRectangle(Pens.Black, 10, 10, 680, 680);
         }

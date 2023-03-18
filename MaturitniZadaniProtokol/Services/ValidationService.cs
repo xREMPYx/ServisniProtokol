@@ -88,7 +88,7 @@ namespace MaturitniZadaniProtokol.Services
 
             bool isAnyDeviceValueEmpty = IsAnyValueEmpty(model.Device.Manufacturer, model.Device.Model, model.Device.SerialCode);
             bool isAnyCustomerValueEmpty = IsAnyValueEmpty(model.Customer.Name, model.Customer.Address, model.Customer.PostalCode, model.Customer.TIN);
-            bool isAnyInfoValueEmpty = IsAnyValueEmpty(model.BasicInformation.MeasurementDate.ToString(), model.BasicInformation.ProtocolNumber);
+            bool isAnyInfoValueEmpty = IsAnyValueEmpty(model.Info.MeasurementDate.ToString(), model.Info.ProtocolNumber);
 
             bool isAnyMeasurementValueEmpty = model.Measurements.Any(x => IsAnyValueEmpty(x.Unit, x.Parameter, x.Value, x.SuitsText));
 

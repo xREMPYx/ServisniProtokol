@@ -35,14 +35,14 @@ namespace MaturitniZadaniProtokol.Services.ModelServices
 
         public void Update(ProtocolModel model)
         {
-            _model = model.BasicInformation;
+            _model = model.Info;
 
             UpdateValues();
         }
 
         public void Save(ProtocolModel model)
         {
-            model.BasicInformation = _model;
+            model.Info = _model;
         }
 
         private void UpdateValues()
