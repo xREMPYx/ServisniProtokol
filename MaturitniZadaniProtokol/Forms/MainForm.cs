@@ -1,14 +1,15 @@
 using MaturitniZadaniProtokol.Models;
 using MaturitniZadaniProtokol.Services;
+using MaturitniZadaniProtokol.Services.ModelServices;
 
 namespace MaturitniZadaniProtokol
 {
     public partial class MainForm : Form
-    {                                        
-        private readonly DeviceService _deviceService;           
-        private readonly CustomerService _customerService;        
-        private readonly MeasurementService _measurementService;
-        private readonly BasicInformationService _basicInfoService;
+    {
+        private readonly InfoModelService _InfoService;
+        private readonly DeviceModelService _deviceService;           
+        private readonly CustomerModelService _customerService;        
+        private readonly MeasurementModelService _measurementService;        
 
         private readonly FileService _fileService;
         private readonly PreviewService _previewService;
@@ -18,17 +19,17 @@ namespace MaturitniZadaniProtokol
         {
             InitializeComponent();
             
-            this._customerService = new CustomerService(this);
-            this._deviceService = new DeviceService(this);
-            this._basicInfoService = new BasicInformationService(this);
+            this._customerService = new CustomerModelService(this);
+            this._deviceService = new DeviceModelService(this);
+            this._InfoService = new InfoModelService(this);
 
-            this._measurementService = new MeasurementService();
+            this._measurementService = new MeasurementModelService();
 
             IModelService[] services = 
             { 
                 _customerService, 
                 _deviceService, 
-                _basicInfoService, 
+                _InfoService, 
                 _measurementService             
             };
 
@@ -41,7 +42,7 @@ namespace MaturitniZadaniProtokol
 
         private void Btn_Info_Edit_Click(object sender, EventArgs e)
         {
-            this._basicInfoService.Edit();
+            this._InfoService.Edit();
         }
 
         private void Btn_Customer_Edit_Click(object sender, EventArgs e)

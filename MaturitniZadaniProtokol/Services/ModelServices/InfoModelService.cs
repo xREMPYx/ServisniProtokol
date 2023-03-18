@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaturitniZadaniProtokol.Services
+namespace MaturitniZadaniProtokol.Services.ModelServices
 {
-    public class BasicInformationService : IModelService
+    public class InfoModelService : IModelService
     {
         private readonly MainForm _mainForm;
 
-        private BasicInformationModel _model = new();
-        public BasicInformationModel GetModel() => _model;
+        private InfoModel _model = new();
+        public InfoModel GetModel() => _model;
 
-        public BasicInformationService(MainForm mainForm)
+        public InfoModelService(MainForm mainForm)
         {
             _mainForm = mainForm;
         }
@@ -35,7 +35,7 @@ namespace MaturitniZadaniProtokol.Services
 
         public void Update(ProtocolModel model)
         {
-            this._model = model.BasicInformation;
+            _model = model.BasicInformation;
 
             UpdateValues();
         }
@@ -46,9 +46,9 @@ namespace MaturitniZadaniProtokol.Services
         }
 
         private void UpdateValues()
-        {            
+        {
             _mainForm.Lbl_Protocol_Number.Text = _model.ProtocolNumber;
             _mainForm.Lbl_Measure_Date.Text = _model.MeasurementDate.ToString("d.M.yyyy");
-        }       
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace MaturitniZadaniProtokol.Services
             this._services = services;
         }
 
-        private string GetInformationText(BasicInformationModel model)
+        private string GetInformationText(InfoModel model)
         {
             return $"{model.ProtocolNumber};{model.MeasurementDate}";
         }
@@ -44,11 +44,11 @@ namespace MaturitniZadaniProtokol.Services
             return sb.ToString();
         }        
 
-        private BasicInformationModel GetInformationModel(string line)
+        private InfoModel GetInformationModel(string line)
         {
             string[] parts = line.Split(';');
 
-            return new BasicInformationModel()
+            return new InfoModel()
             {
                 ProtocolNumber = parts[0],
                 MeasurementDate = DateTime.Parse(parts[1])

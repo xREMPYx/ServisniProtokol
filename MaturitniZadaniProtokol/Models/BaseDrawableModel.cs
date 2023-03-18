@@ -11,7 +11,6 @@ namespace MaturitniZadaniProtokol.Models
     {
         protected int X { get; set; }
         protected int Y { get; set; }
-
         protected Font HeadingFont { get; set; }
         protected Font Font { get; set; }
 

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace MaturitniZadaniProtokol.Models
 {
-    public class BasicInformationModel : BaseDrawableModel
+    public class InfoModel : BaseDrawableModel
     {
         public string ProtocolNumber { get; set; }
         public DateTime MeasurementDate { get; set; } = DateTime.Now;
 
-        public BasicInformationModel()
+        public InfoModel()
         {
             X = 20;
             Y = 70;

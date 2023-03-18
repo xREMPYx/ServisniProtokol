@@ -10,7 +10,7 @@ namespace MaturitniZadaniProtokol.Models
 {
     public class ProtocolModel : BaseDrawableModel
     {
-        public BasicInformationModel BasicInformation { get; set; }
+        public InfoModel BasicInformation { get; set; }
         public CustomerModel Customer { get; set; }
         public DeviceModel Device { get; set; }
         public IList<MeasurementModel> Measurements { get; set; }

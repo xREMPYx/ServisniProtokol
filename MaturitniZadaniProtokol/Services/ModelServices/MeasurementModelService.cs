@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaturitniZadaniProtokol.Services
+namespace MaturitniZadaniProtokol.Services.ModelServices
 {
-    public class MeasurementService : IModelService
+    public class MeasurementModelService : IModelService
     {
         private IList<MeasurementModel> _model = new BindingList<MeasurementModel>();
         public IList<MeasurementModel> GetModel() => _model;
@@ -33,18 +33,18 @@ namespace MaturitniZadaniProtokol.Services
 
             if (result == DialogResult.OK)
             {
-                _model[index] = form.GetModel();                
+                _model[index] = form.GetModel();
             }
         }
 
         public void Remove(int index)
         {
-            _model.RemoveAt(index);            
+            _model.RemoveAt(index);
         }
 
         public void Update(ProtocolModel model)
         {
-            this._model.Clear();
+            _model.Clear();
             model.Measurements.ToList().ForEach(x => _model.Add(x));
         }
 

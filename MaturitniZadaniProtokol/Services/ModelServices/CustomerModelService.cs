@@ -5,23 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaturitniZadaniProtokol.Services
+namespace MaturitniZadaniProtokol.Services.ModelServices
 {
-    public class DeviceService : IModelService
+    public class CustomerModelService : IModelService
     {
         private readonly MainForm _mainForm;
 
-        private DeviceModel _model = new();
-        public DeviceModel GetModel() => _model;
+        private CustomerModel _model = new();
+        public CustomerModel GetModel() => _model;
 
-        public DeviceService(MainForm mainForm)
+        public CustomerModelService(MainForm form)
         {
-            _mainForm = mainForm;            
+            _mainForm = form;
         }
 
         public void Edit()
         {
-            DeviceForm form = new DeviceForm(_model);
+            CustomerForm form = new CustomerForm(_model);
 
             DialogResult result = form.ShowDialog();
 
@@ -35,20 +35,21 @@ namespace MaturitniZadaniProtokol.Services
 
         public void Update(ProtocolModel model)
         {
-            this._model = model.Device;
+            _model = model.Customer;
             UpdateDisplayValues();
         }
 
         public void Save(ProtocolModel model)
         {
-            model.Device = _model;
+            model.Customer = _model;
         }
 
         private void UpdateDisplayValues()
         {
-            _mainForm.Lbl_Device_Manufacturer.Text = _model.Manufacturer;
-            _mainForm.Lbl_Device_Model.Text = _model.Model;
-            _mainForm.Lbl_Device_SerialCode.Text = _model.SerialCode;
+            _mainForm.Lbl_Customer_Address.Text = _model.Address;
+            _mainForm.Lbl_Customer_Name.Text = _model.Name;
+            _mainForm.Lbl_Customer_PostalCode.Text = _model.PostalCode;
+            _mainForm.Lbl_Customer_TIN.Text = _model.TIN;
         }
     }
 }

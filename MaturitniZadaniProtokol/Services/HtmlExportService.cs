@@ -44,7 +44,7 @@ namespace MaturitniZadaniProtokol.Services
             return stringBuilder.ToString();
         }
 
-        private string GetBasicInformations(BasicInformationModel model)
+        private string GetBasicInformations(InfoModel model)
         {
             StringBuilder stringBuilder = new StringBuilder();
 

@@ -16,8 +16,8 @@ namespace MaturitniZadaniProtokol
     {
         private readonly ValidationService _validationService;
 
-        private BasicInformationModel _model = new ();
-        public BasicInformationModel GetModel() => _model;
+        private InfoModel _model = new ();
+        public InfoModel GetModel() => _model;
 
         public BasicInformationForm()
         {
@@ -25,7 +25,7 @@ namespace MaturitniZadaniProtokol
             this._validationService = new(this.ErrorProvider);
         }
 
-        public BasicInformationForm(BasicInformationModel model) : this()
+        public BasicInformationForm(InfoModel model) : this()
         {
             this.TxtBox_ProtocolNumber.Text = model.ProtocolNumber;
             this.DateTimePicker_Measure_Date.Value = model.MeasurementDate;
