@@ -27,6 +27,11 @@ namespace MaturitniZadaniProtokol.Services.ModelServices
 
         public void Edit(int index)
         {
+            if (_model.Count() <= 0)
+            {
+                return;
+            }
+
             MeasureForm form = new MeasureForm(_model[index]);
 
             DialogResult result = form.ShowDialog();
@@ -39,6 +44,11 @@ namespace MaturitniZadaniProtokol.Services.ModelServices
 
         public void Remove(int index)
         {
+            if (_model.Count() <= 0)
+            {
+                return;
+            }
+
             _model.RemoveAt(index);
         }
 

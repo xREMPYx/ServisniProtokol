@@ -61,7 +61,7 @@ namespace MaturitniZadaniProtokol
 
         private void Btn_Measure_Edit_Click(object sender, EventArgs e)
         {            
-            if (_measurementService.GetModel().Count <= 0 || this.DataGridView.SelectedRows.Count <= 0)
+            if (this.DataGridView.SelectedRows.Count <= 0)
             {
                 return;
             }
@@ -73,7 +73,7 @@ namespace MaturitniZadaniProtokol
 
         private void Btn_Measure_Remove_Click(object sender, EventArgs e)
         {
-            if (_measurementService.GetModel().Count <= 0 || this.DataGridView.SelectedRows.Count <= 0)
+            if (this.DataGridView.SelectedRows.Count <= 0)
             {
                 return;
             }
