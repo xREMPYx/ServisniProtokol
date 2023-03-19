@@ -18,11 +18,10 @@ namespace MaturitniZadaniProtokol
         public MainForm()
         {
             InitializeComponent();
-            
-            this._customerService = new CustomerModelService(this);
-            this._deviceService = new DeviceModelService(this);
-            this._infoService = new InfoModelService(this);
 
+            this._infoService = new InfoModelService(this);
+            this._deviceService = new DeviceModelService(this);
+            this._customerService = new CustomerModelService(this);                        
             this._measurementService = new MeasurementModelService();
 
             IModelService[] services = 
@@ -30,7 +29,7 @@ namespace MaturitniZadaniProtokol
                 _customerService, 
                 _deviceService, 
                 _infoService, 
-                _measurementService             
+                _measurementService
             };
 
             this._fileService = new FileService(services);
